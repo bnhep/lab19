@@ -122,7 +122,7 @@ public class ControllerPrescriptionCreate {
 
     } catch (
         SQLException e) {
-      model.addAttribute("message", "Error creating prescription: " + e.getMessage());
+      model.addAttribute("message", "SQL Error.: " + e.getMessage());
       return "prescription_create";
     }
   }
