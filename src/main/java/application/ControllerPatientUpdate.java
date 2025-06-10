@@ -36,6 +36,7 @@ public class ControllerPatientUpdate {
     PatientView pv = new PatientView();
     // TODO search for patient by id
     pv.setId(id);
+    System.out.println("getUpdateForm "+id);
     try (Connection con = getConnection();) {
       PreparedStatement ps = con.prepareStatement(
           "SELECT pa.id, pa.first_name, pa.last_name, pa.birthdate, pa.street, " +

@@ -52,7 +52,8 @@ public class ControllerPatientCreate {
       psDoctor.setString(1, p.getPrimaryName());
       ResultSet rsDoctor = psDoctor.executeQuery();
       if (!rsDoctor.next()) {
-        model.addAttribute("message", "Doctor not found.");
+        model.addAttribute("message", "Doctor not found. Check if"
+            + " primary physician last name is correct.");
         model.addAttribute("patient", p);
         return "patient_register";
       }
@@ -144,6 +145,7 @@ public class ControllerPatientCreate {
           model.addAttribute("patient", p);
           return "patient_get";
         }
+        model.addAttribute("message", "Patient found.");
         model.addAttribute("patient", p);
         return "patient_show";
 
